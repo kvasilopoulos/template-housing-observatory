@@ -7,10 +7,13 @@ library(tidyverse)
 
 # Set Options -------------------------------------------------------------
 
-src <- TRUE
+src <- FALSE
 load <- FALSE
-# primary <<- FALSE
-# secondary <<- FALSE
+primary <<- FALSE
+download_primary <<- FALSE
+secondary <<- FALSE
+
+# Source Scripts ----------------------------------------------------------
 
 if (src) {
   suppressMessages(
@@ -154,7 +157,7 @@ body <- dashboardBody(
                        ),
                 column(6,
                       offset = 1,
-                      selectInput("country", "Select Country:", cnames)
+                      # selectInput("country", "Select Country:", cnames)
                 )
                
             ),

@@ -1,5 +1,5 @@
 
-if(download_primary) {
+if(primary) {
 
   # Download file -----------------------------------------------------------
 
@@ -8,10 +8,12 @@ if(download_primary) {
 
   temp <- "data/hp1704.xlsx"
 
-  dataURL <- "https://www.dallasfed.org/~/media/documents/institute/houseprice/hp1704.xlsx"
+  if (download_primary) {
+    dataURL <- ""
 
-  download.file(dataURL, destfile = temp, mode = 'wb')
-
+    download.file(dataURL, destfile = temp, mode = 'wb')
+  }
+  
   rhpi <- readxl::read_excel(temp, sheet = 3)
 
   rpdi <- readxl::read_excel(temp, sheet = 5)
